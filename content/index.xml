@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Contents on gowise.io </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://gowise.io/content/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Sun, 10 Aug 2014 15:31:48 UTC</updated>
+    
+    <item>
+      <title>test</title>
+      <link>http://gowise.io/content/test</link>
+      <pubDate>Sun, 10 Aug 2014 15:31:48 UTC</pubDate>
+      
+      <guid>http://gowise.io/content/test</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
