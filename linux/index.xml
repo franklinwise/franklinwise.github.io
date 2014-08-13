@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Linuxes on gowise.io </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://gowise.io/linux/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Tue, 12 Aug 2014 19:05:55 UTC</updated>
+    
+    <item>
+      <title>SSH Shortcuts !(alias || script)</title>
+      <link>http://gowise.io/linux/ssh-shortcuts</link>
+      <pubDate>Tue, 12 Aug 2014 19:05:55 UTC</pubDate>
+      
+      <guid>http://gowise.io/linux/ssh-shortcuts</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;ssh alias&lt;/h1&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;script way:&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;~/.bashrc&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;Shell&#34;&gt;alias myserver=&#39;ssh -i .ssh/mykey me@myserver.com&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;call like this&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$ myserver&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;ssh way:&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;~/.ssh/config&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host myserver
+    HostName myserver.con
+    User me
+    IdentityFile ~/.ssh/mykey
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;call like this&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$ ssh myserver&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;ssh way wildcard:&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;gt;= OpenSSH 5.6&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* Expand %h to variable on command line
+     Host *.*
+        Hostname %h
+        IdentityFile ~/.ssh/mykey
+        ... 
+     Host *
+        Hostname %h.example.org
+        ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;call like this&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$ ssh someserver&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;toc_4&#34;&gt;ssh tunnel port forwarding&lt;/h1&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;script way:&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;~/.bashrc&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;bash&#34;&gt;ssh -N -L 8080:10.0.9.11:8000 me@mydomain.com -i ~/.ssh/mykey &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_6&#34;&gt;ssh way:&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;~/.ssh/config/&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host myname
+    HostName mysshgateway.mydomain.com
+    IdentityFile ~/.ssh/mykey
+    LocalForward 9988 10.0.7.11:80
+    User me
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Inspired by: &lt;a href=&#34;http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/&#34;&gt;http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
